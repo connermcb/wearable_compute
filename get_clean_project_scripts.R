@@ -1,9 +1,6 @@
 ## Process Accelerometer and Gyroscope Data
 
 ## Get and format variable names
-# set directory path
-
-
 # Load variable names
 vars <- readLines("features.txt")
 vars <- unlist(lapply(vars, function(x){gsub("^[0-9]+ *", "", x)}))
