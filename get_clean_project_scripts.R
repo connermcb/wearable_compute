@@ -59,3 +59,18 @@ vars_list <- unlist(lapply(vars_list,
                            function(x){gsub("(?<=[a-z]).{0}(?=[A-Z])",
                                             "_", x, perl = TRUE)}))
 
+# reassign newly formatted names to variables
+names(full_data) <- vars_list
+
+## summarize data
+# group and get mean by group
+wide_data <- full_data%>%
+  group_by(subject, activity)%>%
+  summarize_all(funs(m=mean))
+
+# write wide summary table to file
+write.table(wide_data, "wide_data.txt")
+
+# reshape into long form
+long_data <- wide_data%>%
+  gather(key="measure", value="value", -c(1:2))
