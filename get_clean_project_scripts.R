@@ -61,7 +61,7 @@ names(full_data) <- vars_list
 # group and get mean by group
 wide_data <- full_data%>%
   group_by(subject, activity)%>%
-  summarize_all(funs(m=mean))
+  summarize_all(funs(mean))
 
 # write wide summary table to file
 write.table(wide_data, "wide_data.txt", row.names = FALSE)
