@@ -44,24 +44,15 @@ full_data <- full_data[, !grepl("Freq", names(full_data))]
 # get present list of variables
 vars_list <- names(full_data)
 
-# change `t` and `f` prefixes to `Time` and `Freq` respectively.
-vars_list <- unlist(lapply(vars_list, function(x){gsub("^t", "Time", x)}))
-vars_list <- unlist(lapply(vars_list, function(x){gsub("^f", "Freq", x)}))
+# vectors of patterns and replacment for formatting variable names
+patterns <- c('^t', '^f', 'std', 'mean', '\\.+', '(?<=[a-z])(?=[A-Z])')
+replacement <- c('Time', 'Freq', 'Stddev', 'Mean', '', '_')
 
-# make standard deviation description clearer, capitalize
-vars_list <- unlist(lapply(vars_list, function(x){gsub("std", "Stddev", x)}))
-vars_list <- unlist(lapply(vars_list, function(x){gsub("mean", "Mean", x)}))
-
-# remove periods
-vars_list <- unlist(lapply(vars_list, function(x){gsub("\\.+", "", 
-                                                       x, perl = TRUE)}))
-vars_list <- unlist(lapply(vars_list, function(x){gsub("\\.", "", 
-                                                       x, perl = TRUE)}))
-
-# add underscores for readability
-vars_list <- unlist(lapply(vars_list, 
-                           function(x){gsub("(?<=[a-z])(?=[A-Z])",
-                                            "_", x, perl = TRUE)}))
+# reformat variable names 
+vars_list <- stri_replace_all_regex(vars_list, 
+                                    patterns, 
+                                    replacement, 
+                                    vectorize_all = F)
 
 # reassign newly formatted names to variables
 names(full_data) <- vars_list
