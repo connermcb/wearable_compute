@@ -64,8 +64,11 @@ wide_data <- full_data%>%
   summarize_all(funs(m=mean))
 
 # write wide summary table to file
-write.table(wide_data, "wide_data.txt")
+write.table(wide_data, "wide_data.txt", row.names = FALSE)
 
 # reshape into long form
 long_data <- wide_data%>%
   gather(key="measure", value="value", -c(1:2))
+
+# write long summary table to file
+write.table(long_data, "long_data.txt", row.names = FALSE)
