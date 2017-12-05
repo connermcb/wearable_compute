@@ -48,12 +48,14 @@ vars_list <- unlist(lapply(vars_list, function(x){gsub("std", "Stddev", x)}))
 vars_list <- unlist(lapply(vars_list, function(x){gsub("mean", "Mean", x)}))
 
 # remove periods
-vars_list <- unlist(lapply(vars_list, function(x){gsub("\\.+", "", x)}))
-vars_list <- unlist(lapply(vars_list, function(x){gsub("\.", "", x)}))
+vars_list <- unlist(lapply(vars_list, function(x){gsub("\\.+", "", 
+                                                       x, perl = TRUE)}))
+vars_list <- unlist(lapply(vars_list, function(x){gsub("\\.", "", 
+                                                       x, perl = TRUE)}))
 
 # add underscores for readability
 vars_list <- unlist(lapply(vars_list, 
-                           function(x){gsub("(?<=[a-z]).{0}(?=[A-Z])",
+                           function(x){gsub("(?<=[a-z])(?=[A-Z])",
                                             "_", x, perl = TRUE)}))
 
 # reassign newly formatted names to variables
