@@ -1,5 +1,10 @@
 ## Process Accelerometer and Gyroscope Data
 
+## packages
+library(dplyr)
+library(reshape)
+library(stringi)
+
 ## Get and format variable names
 # Load variable names
 vars <- readLines("features.txt")
