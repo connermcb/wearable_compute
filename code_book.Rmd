@@ -1,0 +1,32 @@
+---
+title: "Code Book"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+__Variables__
+
+`subject` - integer code for participant in the study, range 1-30.
+
+`activity_name` - factor variable describing the type of activity being engaged in at moment of measurement. Levels: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING.
+
+For the measurement variables, the variable name is divided into ordered descriptive components:
+
+The first component is either `Time` or `Freq` to denote time domain or frequency domain signals respectively. 
+
+The second component, either `Body` or `Gravity`, indicate body or gravity acceleration signals.
+
+The third component, either `Acc` or `Gyro`, denotes whether the measure is from the accelerometer or gyroscope.
+
+Inclusion of a the component, `Jerk`, indicates the variable is the derivation of body linear acceleration and angular velocity in time. Inclusion of the component `Mag` indicates the variable is measure of the magnitude of these three dimensional forces.
+
+The final two components denote summary statistic and axial signal. 
+
+The summary stat component is either `Mean` or `Stddev` denoting mean or standard deviation respectively.
+
+The last component, axial signals, is marked with the directional variables `X`, `Y`, or `Z`.
+
+All measurement variable values are standard normalized and do not include units of measure.
