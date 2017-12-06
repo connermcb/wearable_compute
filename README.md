@@ -28,25 +28,6 @@ Although far fewer than several hundred variables of the original dataset, the s
 
 As the last step the data was grouped by `subject` and `activity` before being summarized by the mean and being output in wide format. Code for an alternate long form is also included that just gathers the measure variable names and values from the wide format.
 
-## Code Book
-
-Each variable name is divided into ordered descriptive components:
-
-The first component is either `Time` or `Freq` to denote time domain or frequency domain signals respectively. 
-
-The second component, either `Body` or `Gravity`, indicate body or gravity acceleration signals.
-
-The third component, either `Acc` or `Gyro`, denotes whether the measure is from the accelerometer or gyroscope.
-
-Inclusion of a the component, `Jerk`, indicates the variable is the derivation of body linear acceleration and angular velocity in time. Inclusion of the component `Mag` indicates the variable is measure of the magnitude of these three dimensional forces.
-
-The final two components denote summary statistic and axial signal. 
-
-The summary stat component is either `Mean` or `Stddev` denoting mean or standard deviation respectively.
-
-The last component, axial signals, is marked with the directional variables `X`, `Y`, or `Z`.
-
-
 
 
 
