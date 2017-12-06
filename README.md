@@ -9,13 +9,21 @@ This repository is divided into data files, data processing code, and output dat
 ## Repository Contents
 
 `activity_labels.txt` - table of activities and their integer encodings
+
 `features.txt` - enumerated list of all 561 measurement variable names
+
 `features_info.txt` - README-like description of features and feature names
+
 `get_clean_project_script.R` - code to read, clean, format, and tidy data
+
 `long_data.txt` - long-form tidy output from `get_clean_project_script.R`
+
 `/test` - file containing processed and raw data for testing ML models
+
 `/train` - file containing processed and raw data for training ML models
+
 `wide_data.txt` - wide-form tidy output from `get_clean_project_script.R`
+
 `code_book.Rmd` - html markdown containing information about variables in tidied dataset.
 
 ## The Data
