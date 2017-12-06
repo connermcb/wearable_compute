@@ -6,6 +6,20 @@ Final Project for J Hopkins - Get &amp; Clean Data
 
 This repository is divided into data files, data processing code, and output data files. The [original data](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) is from the UCI Machine Learning Repository and consists of cell phone accelerometer and gyroscope data labeled with one of six activities the users was engaged in at the moment of measurement. The data set is divided into train and test sets and labeled for maching learning practice; however for this repository it's used for data cleaning and tidying exercises.
 
+## The Data
+
+From the Coursera project assignment page:
+
+One of the most exciting areas in all of data science right now is wearable computing - see for example [this article](http://www.insideactivitytracking.com/data-science-activity-tracking-and-the-battle-for-the-worlds-top-sports-brand/). Companies like Fitbit, Nike, and Jawbone Up are racing to develop the most advanced algorithms to attract new users. The data linked to from the course website represent data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained:
+
+[Human Activity Recognition Using Smartphones](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
+
+Here are the data for the project:
+
+[Data Files](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
+
+You should create one R script called run_analysis.R that does the following.
+
 ## Cleaning and Tidying Steps
 
 ### Read in and Merge Data
